@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Diary</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="diary-page">
+            <div class="widget" id="dateWidget"></div>
+            
+            <div class="mood-selector">
+                <label>How are you feeling?</label>
+                <div class="mood-options">
+                    <button class="mood-btn" data-mood="happy" data-tooltip="Happy & Content">
+                        <i class="fas fa-smile"></i>
+                    </button>
+                    <button class="mood-btn" data-mood="sad" data-tooltip="Sad & Down">
+                        <i class="fas fa-frown"></i>
+                    </button>
+                    <button class="mood-btn" data-mood="neutral" data-tooltip="Neutral & Calm">
+                        <i class="fas fa-meh"></i>
+                    </button>
+                    <button class="mood-btn" data-mood="excited" data-tooltip="Excited & Energetic">
+                        <i class="fas fa-grin-stars"></i>
+                    </button>
+                </div>
+            </div>
+
+            <textarea 
+                class="editor" 
+                placeholder="What's on your mind today?"
+                id="diaryEntry"
+            ></textarea>
+            
+            <div class="button-group">
+                <button class="idea-button" id="shareButton">
+                    <i class="fas fa-paper-plane"></i> Share Idea
+                </button>
+                <button class="history-button" id="historyButton">
+                    <i class="fas fa-history"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Add to index.html -->
+        <div class="overlay" id="sidebarOverlay"></div>
+        <!-- index.html - Add header to history panel -->
+        <div class="history-panel" id="historyPanel">
+            <div class="history-header">
+                <h3><i class="fas fa-book"></i> Your Ideas</h3>
+                <button class="close-btn" id="closeHistory">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="ideas-list" id="ideasList"></div>
+        </div>
+
+        <!-- Add to index.html -->
+        <div class="note-modal" id="noteModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="mood-badge" id="modalMood"></div>
+                    <button class="close-modal-btn">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="modal-date" id="modalDate"></div>
+                <div class="modal-text" id="modalText"></div>
+                <div class="modal-actions">
+                    <button class="edit-btn" id="modalEdit">
+                        <i class="fas fa-edit"></i> Edit
+                    </button>
+                    <button class="delete-btn" id="modalDelete">
+                        <i class="fas fa-trash"></i> Delete
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
